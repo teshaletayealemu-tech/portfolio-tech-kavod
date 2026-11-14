@@ -1,1 +1,371 @@
+<!DOCTYPE html>
+<html lang="am" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAVOD TECH SOLUTIONS PLC | ካቮድ ቴክ ሶሉሽን</title>
+  <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+Ethiopic:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
+    :root {
+      --bg-dark: #030B09;
+      --emerald-deep: #064E3B;
+      --teal-glow: #14B8A6;
+      --gold-accent: #F59E0B;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Ethiopic', sans-serif;
+      background-color: var(--bg-dark);
+      color: #F8FAFC;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Cinzel', 'Plus Jakarta Sans', 'Noto Sans Ethiopic', serif;
+    }
+
+    .glass-panel {
+      background: rgba(6, 78, 59, 0.16);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(20, 184, 166, 0.22);
+    }
+
+    .kavod-gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 0%, #5EEAD4 45%, #FBBF24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Accessibility focus outlines */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #14B8A6;
+      outline-offset: 3px;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #030B09; }
+    ::-webkit-scrollbar-thumb { background: #0D9488; border-radius: 999px; }
+  </style>
+</head>
+<body class="antialiased selection:bg-teal-500 selection:text-black">
+
+  <!-- Minimalist Sticky Top Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-teal-500/15 bg-[#030B09]/85 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-400 to-emerald-800 flex items-center justify-center font-extrabold text-black text-base shadow-lg shadow-teal-500/20">
+          K
+        </div>
+        <div>
+          <span class="font-display font-extrabold tracking-widest text-sm sm:text-base text-white block leading-none">
+            KAVOD <span class="text-teal-400">TECH</span>
+          </span>
+          <span class="text-[10px] tracking-[0.22em] text-teal-300/80 uppercase font-semibold">SOLUTIONS PLC</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-bold tracking-wider uppercase text-slate-300">
+        <a href="#hero-video-section" class="hover:text-teal-300 transition" data-i18n="nav_craft">የቴክኖሎጂ ጥበብ</a>
+        <a href="#services" class="hover:text-teal-300 transition" data-i18n="nav_services">አገልግሎቶች</a>
+        <a href="#works" class="hover:text-teal-300 transition" data-i18n="nav_works">የተሰሩ ፕሮጀክቶች</a>
+        <a href="#founder" class="hover:text-teal-300 transition" data-i18n="nav_founder">መስራች</a>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <button onclick="toggleLang()" class="px-3 py-1.5 rounded-lg border border-teal-400/30 text-xs font-extrabold text-teal-200 hover:bg-teal-500/15 transition">
+          <span id="lang-btn">English</span>
+        </button>
+        <a href="#contact" class="bg-gradient-to-r from-teal-400 to-emerald-500 hover:opacity-95 text-black font-extrabold text-xs px-4 py-2 rounded-lg shadow-lg shadow-teal-500/20 transition" data-i18n="nav_cta">
+          አግኙን
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 1. HERO BRANDING INTRO ==================== -->
+  <section id="top" class="relative pt-32 pb-12 px-4 sm:px-6 max-w-7xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-teal-300 text-xs font-bold tracking-widest uppercase mb-4">
+      <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
+      <span data-i18n="hero_pill">ካቮድ ቴክ ሶሉሽን ኃ.የተ.የግ.ማህበር[cite: 5]</span>
+    </div>
+    <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] kavod-gradient-text mb-4">
+      KAVOD TECH SOLUTIONS PLC
+    </h1>
+    <p class="text-lg sm:text-xl font-extrabold text-teal-300 max-w-2xl mx-auto" data-i18n="hero_am_brand">
+      ካቮድ ቴክ ሶሉሽን — ዘመናዊ የዲጂታል እና የፈጠራ መፍትሔዎች
+    </p>
+  </section>
+
+  <!-- ==================== 2. CINEMATIC 3D SCROLLYTELLING VIDEO SECTION (REPLACED PORTRAIT/LAPTOP) ==================== -->
+  <section id="hero-video-section" class="relative h-[400vh] bg-[#020806]">
+    <div id="video-pin" class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+      
+      <!-- Your 8K AI Video playing forward and backward with scroll -->
+      <video id="scrolly-video" src="video_1.mp4" class="absolute inset-0 w-full h-full object-cover" muted playsinline preload="auto"></video>
+
+      <!-- Gradient Overlay to blend video smoothly -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#030B09]/40 via-transparent to-[#030B09]/80 pointer-events-none"></div>
+
+      <!-- Scroll Progress Bar -->
+      <div class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 flex flex-col items-center gap-2">
+        <span class="text-[10px] font-bold tracking-widest text-teal-300 uppercase [writing-mode:vertical-rl] rotate-180">SCROLL</span>
+        <div class="w-1 h-36 bg-white/10 rounded-full overflow-hidden">
+          <div id="scroll-progress-bar" class="w-full h-0 bg-gradient-to-b from-teal-400 to-amber-400"></div>
+        </div>
+      </div>
+
+      <!-- Story Cards at Bottom (Fixed positioning so they don't block the video) -->
+      <div class="absolute bottom-8 left-4 right-4 sm:left-12 sm:right-12 z-20 pointer-events-none max-w-4xl mx-auto">
+        <div id="stage-1" class="glass-panel p-6 rounded-2xl border-l-4 border-teal-400 transition-all duration-300 shadow-2xl">
+          <p class="text-xs font-extrabold uppercase tracking-widest text-teal-300 mb-1">01 • KAVOD ARCHITECTURE</p>
+          <h2 class="font-display text-xl sm:text-2xl font-extrabold text-white mb-1" data-i18n="st1_title">የቴክኖሎጂ እና የፈጠራ መገጣጠም</h2>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-i18n="st1_desc">እያንዳንዱን ፕሮጀክት ከመሠረቱ እንገነባለን — ዘመናዊ ኮዲንግ፣ የሲኒማ ካሜራ እይታ እና የስቱዲዮ ብርሃን በአንድ ላይ ሲዋሃዱ።</p>
+        </div>
+
+        <div id="stage-2" class="glass-panel p-6 rounded-2xl border-l-4 border-emerald-400 opacity-0 translate-y-4 transition-all duration-300 shadow-2xl absolute inset-x-0 bottom-0">
+          <p class="text-xs font-extrabold uppercase tracking-widest text-emerald-300 mb-1">02 • SMART SOFTWARE & WEB</p>
+          <h2 class="font-display text-xl sm:text-2xl font-extrabold text-white mb-1" data-i18n="st2_title">የኮዲንግ ስክሪኖች እና ቀጥታ ሲስተሞች</h2>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-i18n="st2_desc">ለካፌዎች፣ ለሬስቶራንቶች እና ለድርጅቶች በቅጽበት የሚገናኙ (Real-Time Cloud) የማዘዣ፣ የክፍያ እና የፖርትፎሊዮ ሲስተሞች።</p>
+        </div>
+
+        <div id="stage-3" class="glass-panel p-6 rounded-2xl border-l-4 border-amber-400 opacity-0 translate-y-4 transition-all duration-300 shadow-2xl absolute inset-x-0 bottom-0">
+          <p class="text-xs font-extrabold uppercase tracking-widest text-amber-300 mb-1">03 • AI VIDEO & CINEMA PRODUCTION</p>
+          <h2 class="font-display text-xl sm:text-2xl font-extrabold text-white mb-1" data-i18n="st3_title">ካሜራ፣ ብርሃን እና AI ቪዲዮ ጥበብ</h2>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-i18n="st3_desc">የደንበኞችን ትኩረት የሚስቡ ባለከፍተኛ ጥራት ማስታወቂያዎች፣ 3D አኒሜሽኖች እና የብራንድ መለያ ሎጎዎች።</p>
+        </div>
+
+        <div id="stage-4" class="glass-panel p-6 rounded-2xl border border-teal-400/50 opacity-0 scale-95 transition-all duration-300 text-center shadow-2xl absolute inset-x-0 bottom-0">
+          <p class="text-xs font-extrabold uppercase tracking-[0.25em] text-amber-300 mb-1">KAVOD TECH SOLUTIONS PLC</p>
+          <h2 class="font-display text-xl sm:text-3xl font-extrabold kavod-gradient-text mb-1" data-i18n="st4_title">ሙሉ የዲጂታል ኃይል በአንድ ጣሪያ ስር</h2>
+          <p class="text-xs sm:text-sm text-slate-200" data-i18n="st4_desc">ሐሳብዎን ወደ እውነተኛ የገበያ ስኬት ለመቀየር ካቮድ ቴክ ሶሉሽን ዝግጁ ነው።</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 3. CORE SERVICES ==================== -->
+  <section id="services" class="py-24 px-4 sm:px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <span class="text-xs font-extrabold uppercase tracking-[0.25em] text-teal-400">WHAT WE BUILD</span>
+      <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white" data-i18n="srv_heading">የካቮድ ቴክ ሶሉሽን ዋና አገልግሎቶች</h2>
+      <p class="text-sm text-slate-400" data-i18n="srv_sub">ቴክኖሎጂን እና የፈጠራ ጥበብን አቀናጅተን ለንግድዎ ዘላቂ እድገት እንሰራለን</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="glass-panel p-6 rounded-2xl hover:border-teal-400/60 transition group">
+        <div class="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-300 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">💻</div>
+        <h3 class="text-lg font-extrabold text-white mb-2">Interactive Web & Portfolios</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">ልክ እንደዚህ ገጽ በስክሮል የሚንቀሳቀሱ (Scrollytelling) ዘመናዊ ድረ-ገጾች እና የድርጅት ፖርትፎሊዮዎች።</p>
+      </div>
+
+      <div class="glass-panel p-6 rounded-2xl hover:border-teal-400/60 transition group">
+        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">📱</div>
+        <h3 class="text-lg font-extrabold text-white mb-2">Smart POS & QR Systems</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">ለካፌዎችና ሬስቶራንቶች የQR ሜኑ፣ የኪችን/ባሬስታ ታብሌት እና የካሸር ቁጥጥር ሲስተሞች።</p>
+      </div>
+
+      <div class="glass-panel p-6 rounded-2xl hover:border-teal-400/60 transition group">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🎬</div>
+        <h3 class="text-lg font-extrabold text-white mb-2">AI Video & 3D Production</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">የምርት ማስታወቂያዎች፣ 3D የውስጥ ዲዛይን አኒሜሽኖች እና የቲቪ ዲጂታል ሜኑ ቪዲዮዎች።</p>
+      </div>
+
+      <div class="glass-panel p-6 rounded-2xl hover:border-teal-400/60 transition group">
+        <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🎨</div>
+        <h3 class="text-lg font-extrabold text-white mb-2">Logo & Brand Identity</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">ለድርጅቶች፣ ለፖድካስቶች እና ለንግድ ተቋማት ደረጃውን የጠበቀ ሎጎ፣ የኒዮን ቦክስ ላይት እና የደንብ ልብስ ዲዛይን።</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. SELECTED WORKS ==================== -->
+  <section id="works" class="py-20 px-4 sm:px-6 bg-[#04120E] border-y border-teal-500/15">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.25em] text-amber-400">PORTFOLIO HIGHLIGHTS</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-1" data-i18n="works_heading">በካቮድ ቴክ የተሰሩ ዋና ሥራዎች</h2>
+        </div>
+        <span class="text-xs text-teal-300 font-bold">KAVOD TECH SOLUTIONS PLC • 2026</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="rounded-2xl overflow-hidden glass-panel flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-gradient-to-br from-teal-700 to-emerald-950 p-6 flex flex-col justify-between relative overflow-hidden">
+              <span class="text-xs font-extrabold bg-black/40 text-teal-200 px-3 py-1 rounded-full w-fit">LIVE CLOUD SYSTEM</span>
+              <h3 class="font-display text-2xl font-extrabold text-white">SMART CAFE POS & QR</h3>
+            </div>
+            <div class="p-5 space-y-2">
+              <p class="text-sm font-extrabold text-teal-300">4-Device Real-Time Sync Architecture</p>
+              <p class="text-xs text-slate-300 leading-relaxed">የደንበኛ QR ሜኑ፣ የኪችን KDS፣ የባሬስታ ስክሪን እና የካሸር 15-ጠረጴዛ መቆጣጠሪያ ከፊስካል ደረሰኝ አጋዥ እና ከ Word ሪፖርት ጋር።</p>
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <a href="https://teshaletayealemu-tech.github.io/smart-cafe-checking-2/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-amber-300 hover:underline">
+              ሲስተሙን በቀጥታ ይመልከቱ (Live Demo) →
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden glass-panel flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-gradient-to-br from-amber-600/80 to-emerald-950 p-6 flex flex-col justify-between">
+              <span class="text-xs font-extrabold bg-black/40 text-amber-200 px-3 py-1 rounded-full w-fit">AI & 3D MOTION</span>
+              <h3 class="font-display text-2xl font-extrabold text-white">3D INTERIOR & COMMERCIALS</h3>
+            </div>
+            <div class="p-5 space-y-2">
+              <p class="text-sm font-extrabold text-amber-300">Cinematic Visual Storytelling</p>
+              <p class="text-xs text-slate-300 leading-relaxed">ለማህበራዊ ሚዲያ እና ለስክሪን ማስታወቂያ የሚሆኑ የ3D የቤት ውስጥ ዲዛይን አኒሜሽኖች እና የምርት ማስተዋወቂያ ቪዲዮዎች።</p>
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <span class="text-xs font-bold text-slate-400">Produced by Kavod Studio</span>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden glass-panel flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-gradient-to-br from-cyan-700 to-slate-950 p-6 flex flex-col justify-between">
+              <span class="text-xs font-extrabold bg-black/40 text-cyan-200 px-3 py-1 rounded-full w-fit">BRANDING & DESIGN</span>
+              <h3 class="font-display text-2xl font-extrabold text-white">CORPORATE & MEDIA LOGOS</h3>
+            </div>
+            <div class="p-5 space-y-2">
+              <p class="text-sm font-extrabold text-cyan-300">Migdol Podcast • Eva Youth • Smart Cafe</p>
+              <p class="text-xs text-slate-300 leading-relaxed">ለድርጅቶች፣ ለፖድካስቶች እና ለንግድ ተቋማት ደረጃውን የጠበቀ ሎጎ፣ የኒዮን ቦክስ ላይት እና የደንብ ልብስ ዲዛይኖች።</p>
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <span class="text-xs font-bold text-slate-400">Brand Identity Division</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. FOOTER & CONTACT ==================== -->
+  <footer id="founder" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+    <div id="contact" class="glass-panel rounded-3xl p-8 sm:p-12 border border-teal-400/30 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-8 space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-[0.25em] text-teal-300">LET'S BUILD TOGETHER</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold kavod-gradient-text">KAVOD TECH SOLUTIONS PLC</h2>
+        <p class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed" data-i18n="footer_desc">
+          ለድርጅትዎ ዘመናዊ ዌብሳይት፣ የካፌ/ሬስቶራንት ሲስተም፣ ወይም የAI ቪዲዮ ማስታወቂያ ማሰራት ይፈልጋሉ? አሁኑኑ ያግኙን።
+        </p>
+        <div class="pt-2 flex flex-wrap items-center gap-4 text-xs sm:text-sm font-bold">
+          <div class="bg-black/40 border border-teal-500/30 px-4 py-2.5 rounded-xl">
+            <span class="text-teal-300">መስራች / Founder:</span> <span class="text-white">ተሻለ ታዬ (Teshale Taye)</span>
+          </div>
+          <div class="bg-black/40 border border-teal-500/30 px-4 py-2.5 rounded-xl">
+            <span class="text-teal-300">አድራሻ:</span> <span class="text-white">አዲስ አበባ፣ ኢትዮጵያ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 flex flex-col gap-3">
+        <a href="tel:+251911234567" class="w-full bg-gradient-to-r from-teal-400 to-emerald-500 text-black font-extrabold py-4 px-6 rounded-xl text-center text-sm shadow-lg shadow-teal-500/20 hover:opacity-95 transition">
+          📞 ቀጥታ ይደውሉ: +251 911 234 567
+        </a>
+        <a href="https://t.me/teshalw" target="_blank" class="w-full bg-white/10 hover:bg-white/15 border border-teal-400/30 text-white font-extrabold py-3.5 px-6 rounded-xl text-center text-sm transition">
+          ✈️ በቴሌግራም ያናግሩን (@teshalw)
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer Description Added -->
+    <div class="text-center text-xs text-slate-400 mt-10 space-y-2">
+      <p>KAVOD TECH SOLUTIONS PLC — Interactive Scrollytelling & 3D Portfolio System v2.6. Built with HTML5, Tailwind CSS, GSAP ScrollTrigger, and Custom AI 3D Motion Video.</p>
+      <p>© 2026 <strong class="text-teal-400">KAVOD TECH SOLUTIONS PLC (ካቮድ ቴክ ሶሉሽን)</strong> • Directed by Teshale Taye. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Scroll-driven Video Scrubbing (Video plays forward & backward with scroll)
+    const video = document.getElementById('scrolly-video');
+    let videoDuration = 10; // Default 10 seconds
+
+    video.addEventListener('loadedmetadata', () => {
+      videoDuration = video.duration || 10;
+    });
+
+    ScrollTrigger.create({
+      trigger: '#hero-video-section',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 0.5,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        if (video.duration) {
+          video.currentTime = progress * video.duration;
+        }
+        document.getElementById('scroll-progress-bar').style.height = `${progress * 100}%`;
+
+        // Toggle story cards based on scroll progress
+        toggleStage('stage-1', progress < 0.25);
+        toggleStage('stage-2', progress >= 0.25 && progress < 0.50);
+        toggleStage('stage-3', progress >= 0.50 && progress < 0.75);
+        toggleStage('stage-4', progress >= 0.75);
+      }
+    });
+
+    function toggleStage(id, active) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (active) {
+        el.classList.remove('opacity-0', 'translate-y-4', 'scale-95');
+        el.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+        el.style.zIndex = '10';
+      } else {
+        el.classList.add('opacity-0', 'translate-y-4');
+        el.classList.remove('opacity-100', 'translate-y-0');
+        el.style.zIndex = '1';
+      }
+    }
+
+    let lang = 'am';
+    const DICT = {
+      am: {
+        nav_craft: 'የቴክኖሎጂ ጥበብ', nav_services: 'አገልግሎቶች', nav_works: 'የተሰሩ ፕሮጀክቶች', nav_founder: 'መስራች', nav_cta: 'አግኙን',
+        hero_pill: 'ካቮድ ቴክ ሶሉሽን ኃ.የተ.የግ.ማህበር', hero_am_brand: 'ካቮድ ቴክ ሶሉሽን — ዘመናዊ የዲጂታል እና የፈጠራ መፍትሔዎች',
+        hero_desc: 'ንግድዎን በዘመናዊ ሶፍትዌር ሲስተሞች፣ በይነተገናኝ ዌብሳይቶች (Interactive Web)፣ በAI ቪዲዮ ፕሮዳክሽን እና በፕሮፌሽናል ብራንዲንግ ወደ ላቀ ደረጃ እናሸጋግራለን።',
+        hero_btn_explore: 'አሠራራችንን በስክሮል ይመልከቱ', founder_role_label: 'Founder & Creative Director', founder_name_small: 'ተሻለ ታዬ (Teshale Taye)',
+        st1_title: 'የቴክኖሎጂ እና የፈጠራ መገጣጠም', st1_desc: 'እያንዳንዱን ፕሮጀክት ከመሠረቱ እንገነባለን — ዘመናዊ ኮዲንግ፣ የሲኒማ ካሜራ እይታ እና የስቱዲዮ ብርሃን በአንድ ላይ ሲዋሃዱ።',
+        st2_title: 'የኮዲንግ ስክሪኖች እና ቀጥታ ሲስተሞች', st2_desc: 'ለካፌዎች፣ ለሬስቶራንቶች እና ለድርጅቶች በቅጽበት የሚገናኙ (Real-Time Cloud) የማዘዣ፣ የክፍያ እና የፖርትፎሊዮ ሲስተሞች።',
+        st3_title: 'ካሜራ፣ ብርሃን እና AI ቪዲዮ ጥበብ', st3_desc: 'የደንበኞችን ትኩረት የሚስቡ ባለከፍተኛ ጥራት ማስታወቂያዎች፣ 3D አኒሜሽኖች እና የብራንድ መለያ ሎጎዎች።',
+        st4_title: 'ሙሉ የዲጂታል ኃይል በአንድ ጣሪያ ስር', st4_desc: 'ሐሳብዎን ወደ እውነተኛ የገበያ ስኬት ለመቀየር ካቮድ ቴክ ሶሉሽን ዝግጁ ነው።'
+      },
+      en: {
+        nav_craft: 'Technology Craft', nav_services: 'Services', nav_works: 'Selected Works', nav_founder: 'Leadership', nav_cta: 'Contact Us',
+        hero_pill: 'KAVOD TECH SOLUTIONS PLC', hero_am_brand: 'Next-Generation Digital Systems, Web Engineering & AI Media',
+        hero_desc: 'We elevate businesses through interactive scroll-driven websites, real-time cloud ordering systems, AI commercial video production, and executive brand identity.',
+        hero_btn_explore: 'Scroll to Assemble Our Craft', founder_role_label: 'Founder & Creative Director', founder_name_small: 'Teshale Taye',
+        st1_title: 'Precision Engineering & Creative Assembly', st1_desc: 'Every digital product is crafted from the ground up—uniting clean code, cinema optics, and studio lighting.',
+        st2_title: 'Coding Screens & Real-Time Cloud Systems', st2_desc: 'Live-synchronized ordering systems, cashier POS dashboards, and interactive web applications built for speed.',
+        st3_title: 'Cinema Optics, Lighting & AI Video', st3_desc: 'High-impact commercial videos, 3D architectural animations, and bespoke visual branding that command attention.',
+        st4_title: 'Complete Digital Power Under One Roof', st4_desc: 'Kavod Tech Solutions PLC turns ambitious ideas into market-leading digital experiences.'
+      }
+    };
+
+    function toggleLang() {
+      lang = lang === 'am' ? 'en' : 'am';
+      document.getElementById('lang-btn').textContent = lang === 'am' ? 'English' : 'አማርኛ';
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const k = el.getAttribute('data-i18n');
+        if (DICT[lang][k]) el.textContent = DICT[lang][k];
+      });
+    }
+  </script>
+</body>
+</html>
